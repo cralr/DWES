@@ -58,18 +58,8 @@ M:1000, D:500, C:100, L:50, X:10, V:5, I:1
 
 
     echo "<br>";
-    echo "<br><a href=><button>Ver Código</button></a>";    
+    echo "<br><a href=https://github.com/cralr/DWES/tree/master/Semana22_04-29_04/EjerciciosBasicos><button>Ver Código</button></a>";    
 
-
-
-    /*     echo 'Inserta un numero en en formulario';
-echo '<form method="post">
-<input type="text"name="numero"/>
-<input type="submit"value="Comprobar"/>
-</form>';
-if(is_numeric(@$_POST['numero'])){
-echo 'En numeros romanos: '.to_roman(@$_POST['numero']);
-} */
 
 ?>
 

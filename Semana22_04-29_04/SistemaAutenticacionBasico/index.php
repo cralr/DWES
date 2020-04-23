@@ -55,6 +55,9 @@ Utiliza un array para que el administrador almacene las credenciales y al termin
         echo "<input type='submit' name='login' value='Iniciar Sesión'>";
         echo "</form>";
     }
+
+    echo "<br>";
+    echo "<br><a href=https://github.com/cralr/DWES/tree/master/Semana22_04-29_04/SistemaAutenticacionBasico><button>Ver Código</button></a>"; 
     ?>
 
 </body>

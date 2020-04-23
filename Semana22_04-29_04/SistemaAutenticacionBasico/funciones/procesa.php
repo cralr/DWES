@@ -37,7 +37,7 @@
             $linea = explode(" ", fgets($fichero));
         }while(!feof($fichero));
         $linea = fgets($fichero);
-        fwrite($fichero,"$usuarioNuevo $passNueva".PHP_EOL);
+        fwrite($fichero,"$usuarioNuevo $passNueva"."\n");
         fclose($fichero);
         $_SESSION["logged"] = true;
     }

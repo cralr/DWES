@@ -14,7 +14,7 @@
     if (isset($_POST["login"])){
         $user = $_POST["usuario"];
         $password = $_POST["pass"];
-        $fichero = fopen("fichero/usuarios.txt","r");
+        $fichero = fopen("./fichero/usuarios.txt","r");
         do{
             $linea = explode(" ", fgets($fichero));
             if($_POST["usuario"] == trim($linea[0]) && $_POST["pass"] == trim($linea[1])){
@@ -32,7 +32,7 @@
     
         $usuarioNuevo = $_POST["usuarioRe"];
         $passNueva = $_POST["passRe"];
-        $fichero = fopen("fichero/usuarios.txt","r+");
+        $fichero = fopen("./fichero/usuarios.txt","r+");
         do{
             $linea = explode(" ", fgets($fichero));
         }while(!feof($fichero));

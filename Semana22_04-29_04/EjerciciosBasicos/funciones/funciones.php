@@ -1,19 +1,32 @@
 <?php
 
 
-    /* function numRomanoArabigo($num){
-        $numRomanos = ['','I','V','X','L','C','D','M'];
-        $valorNumeros = [0,1,5,10,50,100,500,1000];
+    function numRomanoToArabigo($romano){
 
-        $num = '';
-        $anterior = 0;
-        $suma = 0;
-        $letra = '';
+        $numerosRomanos = array('I' => 1,
+                                'V' => 5,
+                                'X' => 10,
+                                'L' => 50, 
+                                'C' => 100,
+                                'D' => 500,
+                                'M' => 1000,
+        );
 
-        for ($i = 0;$i < count($num); $i++){
-
+        $romano = strtoupper($romano);
+        $lenght = strlen($romano);
+        $contador = 0;
+        $resultado = 0;
+        while ($contador < $lenght){
+            if (($contador + 1 < $lenght) && $numerosRomanos[$romano[$contador]] < $numerosRomanos[$romano[$contador + 1]]){
+                $resultado += $numerosRomanos[$romano[$contador + 1]] - $numerosRomanos[$romano[$contador]];
+                $contador += 2;
+            }else{
+                $resultado += $numerosRomanos[$romano[$contador]];
+                $contador++;
+            }
         }
-    } */
+        return $resultado;
+    }
 
     function esPerfecto($num){
         $suma = 0;
@@ -55,9 +68,4 @@
 
         echo $suma;
     }
-
-
-
-
-
 ?>

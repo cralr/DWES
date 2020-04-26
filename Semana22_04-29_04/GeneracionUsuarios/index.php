@@ -62,14 +62,14 @@
 
             if ($_POST["type"] == "linux"){
                 $salida = fopen("salida.txt","w");
-            foreach ($arrayUsuarios as $key => $usuarios){
-                $comando1 = "sudo useradd $usuarios \n";
-                $comando2 = "sudo passwd $usuarios \n";
+                foreach ($arrayUsuarios as $key => $usuarios){
+                    $comando1 = "sudo useradd $usuarios \n";
+                    $comando2 = "sudo passwd $usuarios \n";
 
-                fwrite($salida, $comando1);
-                fwrite($salida, $comando2);
+                    fwrite($salida, $comando1);
+                    fwrite($salida, $comando2);
                 }   
-            fclose($salida);
+                fclose($salida);
             }
         }
 
@@ -86,8 +86,10 @@
         echo "</select>";
         echo "<br/><br>";
         echo "<input type='submit' name='enviar' value='Enviar'>";
+        echo "</form>";
 
-
+        echo "<br>";
+        echo "<br><a href=https://github.com/cralr/DWES/tree/master/Semana22_04-29_04/GeneracionUsuarios><button>Ver Código</button></a>"; 
     ?>
 </body>
 </html>

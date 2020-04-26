@@ -1,27 +1,93 @@
-fichero: ------?(Elegir fichero)
-Salida: select ( linux, mysql)
+<!--  
+    Escenario de funcionamiento.
 
-    enviar
+    Crea un sistema que permita generar cuentas de usuario mysql, linux con la información del fichero adjunto.S
+-->
 
-if isset(enviar)
+<?php
 
-    subirFichero:alumnos2daw.txt
+    include "funciones/funciones.php";
 
-    moveTo: origen.txt
-    formatoSalida<- mysql
+?>
 
-    open(origen.txt,r)
-    open(origen.txt,w)
-    while !feof(origen){
-        cadena<-fgets(origen)
-        usuario = convertirCadenaAUsuario(cadena)
-        if salida = mysql
-            comando1 = "create user $usuario identify by " ;
-            comando2 = "grant privileges on *";
-            fputs(salida.txt, comando1)
-            fputs(salida,comando2)
-    }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Ficheros</title>
+</head>
+<body>
+    <h1>Generación de Usuarios Linux o Mysql</h1>
 
-    location 
-    header() // descarga del fichero
+    <?php
+
+        if (isset($_POST['enviar'])){
+            
+            $file = fopen("alumnos.txt","r");
+            $contador = 0;
+            $contadorUsuariosRepetidos=0;
+            $arrayUsuarios = array();
+            $ficheroOrigen = fopen($_POST["entrada"],"r");
+            do{
+                $cadena = normaliza(strtolower(fgets($ficheroOrigen)));
+                if($contador > 7){
+                    $nombreCompleto = explode(" ", $cadena);
+                    $user = substr($nombreCompleto[0],0,2).substr($nombreCompleto[1],0,2).substr($nombreCompleto[2],0,2);
+                    do{
+                        if (in_array($user,$arrayUsuarios)){
+                            $user=$user.$contadorUsuariosRepetidos;
+                            $contadorUsuariosRepetidos++;
+                        }
+                            array_push($arrayUsuarios,$user);
+                        
+                    }while(!in_array($user,$arrayUsuarios));
+                }
+                $contador++;
+            } while(!feof($ficheroOrigen));
+            fclose($ficheroOrigen);
+
     
+            if($_POST["type"] == "mysql"){
+                $salida = fopen("salida.txt","w");
+                foreach ($arrayUsuarios as $key => $usuarios){
+                    $comando1 = "CREATE USER '$usuarios'@'localhost' IDENTIFIED BY '$usuarios' \n";
+                    $comando2 = "GRANT ALL PRIVILEGES ON * . * TO '$usuarios'@'localhost' \n";
+
+                    fwrite($salida, $comando1);
+                    fwrite($salida, $comando2);
+                }   
+                fclose($salida);
+            }
+
+            if ($_POST["type"] == "linux"){
+                $salida = fopen("salida.txt","w");
+            foreach ($arrayUsuarios as $key => $usuarios){
+                $comando1 = "sudo useradd $usuarios \n";
+                $comando2 = "sudo passwd $usuarios \n";
+
+                fwrite($salida, $comando1);
+                fwrite($salida, $comando2);
+                }   
+            fclose($salida);
+            }
+        }
+
+
+        echo "<form action=".$_SERVER['PHP_SELF']." method='post'>";
+        echo "<p><b>Elige el fichero</b></p>";
+        echo "<input type='file' name='entrada'>";
+        echo "<br/><br/>";
+        echo "<p>Elige el tipo de comando:</p>";
+        echo "<select name='type'>";
+            echo "<option></option>";
+            echo "<option value='mysql'>MySql</option>";
+            echo "<option value='linux'>Linux</option>";
+        echo "</select>";
+        echo "<br/><br>";
+        echo "<input type='submit' name='enviar' value='Enviar'>";
+
+
+    ?>
+</body>
+</html>

@@ -1,5 +1,6 @@
 <?php
 
+    //Función Ejercicio 1
 
     function numRomanoToArabigo($romano){
 
@@ -27,6 +28,8 @@
         }
         return $resultado;
     }
+
+    //Funciones Ejercicio 2
 
     function esPerfecto($num){
         $suma = 0;
@@ -68,4 +71,25 @@
 
         echo $suma;
     }
+
+
+    //Función Ejercicio 3
+
+    function comprobarMatriz(){
+        $comprobacion = true;
+        for ($i=0; $i < count($_POST["valores"]); $i++) { 
+          for ($j=0; $j < count($_POST["valores"]); $j++) {
+            if ($_POST["valores"][$i][$j] != $_POST["valores"][$j][$i]) {
+              $comprobacion = false;
+            } 
+          }
+        }
+      
+        if ($comprobacion) {
+          echo "<p>La matriz es simétrica</p>";
+        }else {
+          echo "<p>La matriz no es simétrica</p>";
+        }
+    }
+
 ?>

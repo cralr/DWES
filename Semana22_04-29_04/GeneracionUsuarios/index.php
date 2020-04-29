@@ -1,26 +1,12 @@
 <!--  
     Escenario de funcionamiento.
 
-    Crea un sistema que permita generar cuentas de usuario mysql, linux con la información del fichero adjunto.S
+    Crea un sistema que permita generar cuentas de usuario mysql, linux con la información del fichero adjunto.
 -->
 
 <?php
 
     include "funciones/funciones.php";
-
-?>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba Ficheros</title>
-</head>
-<body>
-    <h1>Generación de Usuarios Linux o Mysql</h1>
-
-    <?php
 
         if (isset($_POST['enviar'])){
             
@@ -73,6 +59,20 @@
             }
         }
 
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Ficheros</title>
+</head>
+<body>
+    <h1>Generación de Usuarios Linux o Mysql</h1>
+
+    
+    <?php
 
         echo "<form action=".$_SERVER['PHP_SELF']." method='post'>";
         echo "<p><b>Elige el fichero</b></p>";
@@ -90,6 +90,7 @@
 
         echo "<br>";
         echo "<br><a href=https://github.com/cralr/DWES/tree/master/Semana22_04-29_04/GeneracionUsuarios><button>Ver Código</button></a>"; 
+        
     ?>
 </body>
 </html>

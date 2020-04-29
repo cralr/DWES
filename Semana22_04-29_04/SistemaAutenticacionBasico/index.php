@@ -44,6 +44,7 @@ Utiliza un array para que el administrador almacene las credenciales y al termin
         echo "<input type='password' name=passRe><br/><br/>";
         echo "<input type='submit' name='registrar' value='Registrar Usuario'>";
         echo "<a href=\"logout.php\">Cerrar sesión</a>";
+        echo "</form>";
     }else{
         echo "<form action=".$_SERVER['PHP_SELF']." method='post'>";
         echo "<p><b>Iniciar Sesión</b></p>";
@@ -62,3 +63,37 @@ Utiliza un array para que el administrador almacene las credenciales y al termin
 
 </body>
 </html>
+
+
+<!--
+
+    $firewall = array("sript.php",{ADMIN})
+
+ejemplo1.php // privado1.php
+
+¿Quién puede ejecutar ejemplo1.php? 
+
+if ($_session['perfil'] != 'USER' and $_session['perfil'!='ADMIN'){
+    location:
+}
+
+¿Bajo que condiciones se puede ejecutar ejemplo1.php?
+
+-Petición http
+-inserta_fila_bd.php
+    admin
+    Respuesta a envio de formulario. isset($_POST['enviar'])
+
+Seguridad
+    -Mismo agente.
+    -Mismo token.
+    -Mismo IP.
+
+    if !usuario_valido{
+        location: index.php
+    }
+    if !camino_valido
+        location: index.php
+    if !seguro
+        location: index.php
+-->

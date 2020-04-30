@@ -62,7 +62,7 @@ Utiliza un array para que el administrador almacene las credenciales y al termin
 
 
     echo "<br>";
-    echo "<br><a href=https://github.com/cralr/DWES/tree/master/Semana22_04-29_04/SistemaAutenticacionBasico><button>Ver Código</button></a>"; 
+    echo "<br><a href=https://github.com/cralr/DWES/tree/master/Semana29_04-06_05/SistemaAutenticacionBasico><button>Ver Código</button></a>"; 
     ?>
 
 </body>

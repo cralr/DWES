@@ -11,7 +11,7 @@
     }
 
 
-    if (isset($_POST["login"])){
+    if (isset($_POST["login"]) ){
         $user = $_POST["usuario"];
         $password = $_POST["pass"];
         
@@ -21,14 +21,16 @@
             $_SESSION["perfil"] = "admin";
         }
 
-        $fichero = fopen("./fichero/usuarios.txt","r");
-        do{
-            $linea = explode(" ", fgets($fichero));
-            if($_POST["usuario"] == trim($linea[0]) && $_POST["pass"] == trim($linea[1])){
-                header("Location: privado.php");
-                $_SESSION["perfil"] = "registrado";
-            }
-        }while(!feof($fichero)); 
+        if(!empty($_POST["usuario"]) || !empty($_POST["pass"])){
+            $fichero = fopen("./fichero/usuarios.txt","r");
+            do{
+                $linea = explode(" ", fgets($fichero));
+                if($_POST["usuario"] == trim($linea[0]) && $_POST["pass"] == trim($linea[1])){
+                    header("Location: privado.php");
+                    $_SESSION["perfil"] = "registrado";
+                }
+            }while(!feof($fichero));
+        }
     }
 
     if(isset($_POST["registrar"])){

@@ -1,0 +1,156 @@
+body{
+    margin: 0;
+}
+
+header,footer{
+    height: 18vh;
+    background-color: aqua;
+    margin: 0;
+}
+
+header h1{
+    text-align: center;
+    margin: 0;
+}
+
+
+.contenedor{
+    height: 62vh;
+}
+
+.login{
+    text-align: right;
+}
+
+.navegacion>nav>ul>li{
+    border: 1px solid black;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: bold;
+    padding: 5px;
+    width: 150px;  
+    margin-top: 15px;
+}
+
+.navegacion>nav>ul>li>a{
+    color: black;
+    text-decoration: none;
+}
+
+.navegacion>nav>ul>li>a:hover{
+    text-decoration: none;
+}
+
+.navegacion>nav>ul{
+    list-style: none;
+    margin: 0;
+    padding: 2px;
+    text-align: center;
+}
+
+main{
+    text-align: center;
+    margin-top: 30px;
+}
+
+table, th, td{
+    border: 1px solid black;
+    text-align: center;
+    margin: auto;
+
+}
+
+th{
+    background-color: beige;
+}
+
+#busqueda{
+    margin: 3%;
+}
+
+.bloqueado{
+   text-align: center;
+   margin-top: 2%;
+}
+
+footer>p{
+    text-align: center;
+}
+
+footer>h3{
+    text-align: center;
+}
+
+footer>div#iconos{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* header{
+    text-align: center;
+}
+
+body{
+    font-family: 'Roboto', Arial;
+    font-size: 16px; 
+}
+
+nav>ul>li{
+    border: 1px solid black;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: bold;
+    padding: 5px;
+    width: 150px;  
+}
+
+nav>ul>li>a{
+    color: black;
+    text-decoration: none;
+}
+
+nav>ul>li>a:hover{
+    text-decoration: none;
+}
+
+nav>ul{
+    list-style: none;
+    margin: 0;
+    padding: 2px;
+    text-align: center;
+}
+
+div.ejercicios{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+footer>p{
+    text-align: center;
+}
+
+footer>h3{
+    text-align: center;
+}
+
+footer>div#iconos{
+    text-align: center;
+}
+
+#iconos img:hover{
+    transform: perspective(700px) rotateY(45deg);
+} */
+
+

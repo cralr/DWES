@@ -1,0 +1,109 @@
+body{
+    margin: 0;
+}
+
+header,footer{
+    height: 18vh;
+    background-color:#00c853;
+    margin: 0;
+}
+
+header h1{
+    text-align: center;
+    margin: 0;
+}
+
+
+.contenedor{
+    height: 62vh;
+}
+
+.login{
+    text-align: right;
+}
+
+.navegacion>nav>ul>li{
+    border: 1px solid black;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: bold;
+    padding: 5px;
+    width: 150px;  
+    margin-top: 15px;
+}
+
+.navegacion>nav>ul>li>a{
+    color: black;
+    text-decoration: none;
+}
+
+.navegacion>nav>ul>li>a:hover{
+    text-decoration: none;
+}
+
+.navegacion>nav>ul{
+    list-style: none;
+    margin: 0;
+    padding: 2px;
+    text-align: center;
+}
+
+main{
+    text-align: center;
+    margin-top: 30px;
+}
+
+table, th, td{
+    border: 1px solid black;
+    text-align: center;
+    margin: auto;
+
+}
+
+th{
+    background-color: beige;
+}
+
+#busqueda{
+    margin: 3%;
+}
+
+.bloqueado{
+   text-align: center;
+   margin-top: 2%;
+}
+
+footer>p{
+    text-align: center;
+    color: black;
+}
+
+footer>h3{
+    text-align: center;
+}
+
+footer>div#iconos{
+    text-align: center;
+}
+
+#correcto{
+    color: green;
+}
+
+#incorrecto{
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

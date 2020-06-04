@@ -1,0 +1,3 @@
+<?php
+    $TITULO = "Secretaría Virtual";
+?>
